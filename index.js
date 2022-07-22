@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 
 
 // EXPRESS API
-const APP_PORT = 3000
+const APP_PORT = 3200
 const app = express()
 
 app.listen(APP_PORT, () => {
@@ -63,6 +63,8 @@ function parseYSSSales($, events) {
         const longitude = saleDetails.find('meta[itemprop=longitude]').attr('content')
         const startDate = saleDetails.find('meta[itemprop=startDate]').attr('content')
         const endDate = saleDetails.find('meta[itemprop=endDate]').attr('content')
+
+        // const position = {latit}
 
         yardsales.push({
             name,
